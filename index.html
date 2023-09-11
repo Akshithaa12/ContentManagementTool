@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Editor</title>
+    <style>
+        /* Basic styling for blocks */
+        .block {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="blockContainer">
+        <!-- Existing blocks will be displayed here -->
+    </div>
+    <div>
+        <button onclick="addTextBlock()">Add Text Block</button>
+        <button onclick="addImageBlock()">Add Image Block</button>
+        <button onclick="addVideoBlock()">Add Video Block</button>
+    </div>
+    <script>
+        // Functions to add blocks
+        function addTextBlock() {
+            const blockContainer = document.getElementById('blockContainer');
+            const textBlock = document.createElement('div');
+            textBlock.className = 'block';
+            textBlock.textContent = 'This is a text block.';
+            blockContainer.appendChild(textBlock);
+        }
+
+        function addImageBlock() {
+            const blockContainer = document.getElementById('blockContainer');
+            const imageBlock = document.createElement('div');
+            imageBlock.className = 'block';
+            const image = document.createElement('img');
+            image.src = 'image1.jpg';
+            image.alt = 'Image Block';
+            imageBlock.appendChild(image);
+            blockContainer.appendChild(imageBlock);
+        }
+
+        function addVideoBlock() {
+            const blockContainer = document.getElementById('blockContainer');
+            const videoBlock = document.createElement('div');
+            videoBlock.className = 'block';
+            const video = document.createElement('video');
+            video.src = 'your-video-url.mp4';
+            video.controls = true;
+            videoBlock.appendChild(video);
+            blockContainer.appendChild(videoBlock);
+        }
+    </script>
+</body>
+</html>
